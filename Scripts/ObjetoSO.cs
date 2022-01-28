@@ -12,4 +12,12 @@ public class ObjetoSO : ScriptableObject
     3: activado pasado
     */
     public List<Sprite> estados;
+
+    public tipoObjetoEnum tipoObjeto = tipoObjetoEnum.recoger;
+
+    public enum tipoObjetoEnum {
+        recoger,
+        activar,
+        dialogo
+    };
 }
