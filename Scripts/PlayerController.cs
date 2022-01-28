@@ -26,18 +26,30 @@ public class PlayerController : MonoBehaviour
         #endregion
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         // Cuando entra un objeto dentro del area de interaccion debe poder interactuar
-        _objetosEnRango.Add(other.gameObject);
+        if(other.gameObject.GetComponent<ObjetoInteraccion>()) {
+            _objetosEnRango.Add(other.gameObject);
+        }
+        MasCercano();
+        Debug.Log("Nueva colision: " + other.gameObject.name);
     }
-
-    private void OnCollisionExit2D(Collision2D other) {
+    
+    private void OnTriggerExit2D(Collider2D other) {
         // Una vez sale del rango de un objeto, lo elimina de su rango de interaccion
         if(_objetosEnRango.Contains(other.gameObject)){
             _objetosEnRango.Remove(other.gameObject);
+            other.gameObject.GetComponent<ObjetoInteraccion>().PuedeInteraccionar(false);
         }
+        MasCercano();
     }
-
+    /**
+     * MasCercano
+     * 
+     * Calcula el objeto interaccionable mas cercano para marcarlo 
+     * 
+     * @return GameObjet
+     */
     private GameObject MasCercano() {
         if(_objetosEnRango.Count < 1) {
             return null;
@@ -55,16 +67,26 @@ public class PlayerController : MonoBehaviour
         }
         // _masCercano es el objeto a interaccionar o mostrar un indicador
         // TODO: mostrar indicador en el objeto
+        ObjetoInteraccion oi = _masCercano.GetComponent<ObjetoInteraccion>();
+        oi.PuedeInteraccionar(true);
         return _masCercano;
     }
 
+    /**
+     * Interact
+     * 
+     * Interaccion con objetos del escenario
+     * 
+     * @return bool
+     */
     private bool Interact() {
         // Calcula el objeto más cercano dentro de su rango e interacciona con él
         GameObject _objeto = MasCercano();
         if(_objeto == null) {
             return false;
         }
-        // TODO: _objeto.interact();
+        // interaccion del objeto
+        _objeto.GetComponent<ObjetoInteraccion>().Interaccion();
         return true; // interaccion correcta
     }
 }
