@@ -32,9 +32,9 @@ public class PlayerController : MonoBehaviour
             _objetosEnRango.Add(other.gameObject);
         }
         MasCercano();
-        Debug.Log("Nueva colision: " + other.gameObject.name);
+        Debug.Log("Nueva colision de: " + gameObject.name + " con: " + other.gameObject.name);
     }
-    
+
     private void OnTriggerExit2D(Collider2D other) {
         // Una vez sale del rango de un objeto, lo elimina de su rango de interaccion
         if(_objetosEnRango.Contains(other.gameObject)){
@@ -59,6 +59,9 @@ public class PlayerController : MonoBehaviour
         float _distanciaMenor = Vector2.Distance(_objetosEnRango[0].transform.position, transform.position);
         foreach (GameObject _objeto in _objetosEnRango)
         {
+            // Devuelve todos los objetos a estado falso
+            _objeto.GetComponent<ObjetoInteraccion>().PuedeInteraccionar(false);
+            // Averigua la distancia
             float _distancia = Vector2.Distance(_objeto.transform.position, transform.position);
             if(_distancia < _distanciaMenor) {
                 _distanciaMenor = _distancia;
