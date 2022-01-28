@@ -26,5 +26,13 @@ public class ObjetoInteraccion : MonoBehaviour {
 
     public void Interaccion() {
         // TODO: cada objeto tendra interacciones diferentes
+        
+        // Objeto recoger
+        if(so.tipoObjeto == 0)
+        {
+            GameObject manager = GameObject.FindWithTag("GameManager");
+            manager.GetComponent<GameManager>().recogerObjeto(gameObject);
+            Debug.Log("Hey escucha");
+        }
     }
 }

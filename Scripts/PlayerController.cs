@@ -22,8 +22,15 @@ public class PlayerController : MonoBehaviour
         transform.position += movimiento * Time.deltaTime * speed;
         #endregion
         #region Interaccionar con un objeto
-        if(Input.GetAxis(input.interact) > 0) Interact();
+        if(Input.GetButtonDown(input.interact)) Interact();
         #endregion
+
+        // Mover al input manager
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            GameObject manager = GameObject.FindWithTag("GameManager");
+            manager.GetComponent<GameManager>().soltarObjeto();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -91,5 +98,10 @@ public class PlayerController : MonoBehaviour
         // interaccion del objeto
         _objeto.GetComponent<ObjetoInteraccion>().Interaccion();
         return true; // interaccion correcta
+    }
+
+    private void recogerObjeto()
+    {
+
     }
 }
