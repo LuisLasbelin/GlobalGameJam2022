@@ -35,10 +35,12 @@ public class ObjetoInteraccion : MonoBehaviour {
         {
             manager.recogerObjeto(this);
             Debug.Log("Objeto recogido: " + gameObject.name);
-        }else if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.recoger)
+
+        }else if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.activar)
         {
-            //manager.usarObjeto(this);
-            Debug.Log("Objeto usado: " + gameObject.name);
+            GameObject manager = GameObject.FindWithTag("GameManager");
+            manager.GetComponent<GameManager>().usarObjeto(this, so);
+            Debug.Log("Objeto activado: " + gameObject.name);
         }
     }
 

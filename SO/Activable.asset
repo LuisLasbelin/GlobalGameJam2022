@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b00abed29483602439acfebc210e2106, type: 3}
-  m_Name: TimeBox
+  m_Name: Activable
   m_EditorClassIdentifier: 
-  nombre: Caja
+  nombre: Activable
   estados:
-  - {fileID: 21300000, guid: afd4833c2bc4ae545a81f87f56b98ddf, type: 3}
-  - {fileID: 21300000, guid: afd4833c2bc4ae545a81f87f56b98ddf, type: 3}
-  - {fileID: 21300000, guid: afd4833c2bc4ae545a81f87f56b98ddf, type: 3}
-  - {fileID: 21300000, guid: afd4833c2bc4ae545a81f87f56b98ddf, type: 3}
-  tipoObjeto: 0
-  activable: 0
-  objetoNecesario: 
+  - {fileID: 21300000, guid: e9b48191e70d9bf4495b2c0a710f609a, type: 3}
+  - {fileID: 21300000, guid: e9b48191e70d9bf4495b2c0a710f609a, type: 3}
+  - {fileID: 21300000, guid: e9b48191e70d9bf4495b2c0a710f609a, type: 3}
+  - {fileID: 21300000, guid: e9b48191e70d9bf4495b2c0a710f609a, type: 3}
+  tipoObjeto: 1
+  activable: 1
+  objetoNecesario: Caja

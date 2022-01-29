@@ -43,8 +43,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void usarObjeto()
+    public void usarObjeto(ObjetoInteraccion _objetoInteraccion, ObjetoSO so)
     {
-
+        if (so.activable)
+        {
+            if(so.objetoNecesario.Equals(inventario.gameObject.name))
+            {
+                Debug.Log("Activado");
+            }
+            else
+            {
+                Debug.Log("No tienes el objeto necesario");
+            }
+            
+        }
+        else 
+        {
+            Debug.Log("Activado");
+        }
     }
 }
