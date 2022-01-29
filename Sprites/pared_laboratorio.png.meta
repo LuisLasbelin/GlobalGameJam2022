@@ -23,6 +23,9 @@ TextureImporter:
   - first:
       213: -2555814805781545351
     second: pared_laboratorio_6
+  - first:
+      213: -1997472193105496754
+    second: pared_laboratorio_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +92,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +104,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: 4
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -254,6 +257,27 @@ TextureImporter:
       bones: []
       spriteID: 97ef4b5b9fbe78cd0800000000000000
       internalID: -2555814805781545351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pared_laboratorio_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45f9399f9d8744e0800000000000000
+      internalID: -1997472193105496754
       vertices: []
       indices: 
       edges: []
