@@ -108,12 +108,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Interacciona con: " + _masCercano.name);
         // interaccion del objeto
         _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
+        // Animacion
+        animator.SetTrigger("Pickup");
         return true; // interaccion correcta
-    }
-
-    private void recogerObjeto()
-    {
-
     }
 
     private void OnDrawGizmos() {
