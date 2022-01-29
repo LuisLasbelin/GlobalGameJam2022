@@ -33,7 +33,9 @@ public class ObjetoSO : ScriptableObject
         tarjeta,
         lector,
         caja,
-        dispensador_agua
+        dispensador_agua,
+        caja_vieja,
+        caja_nueva
     }
 
     public bool activable;

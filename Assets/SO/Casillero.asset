@@ -10,19 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b00abed29483602439acfebc210e2106, type: 3}
-  m_Name: Fuego
+  m_Name: Casillero
   m_EditorClassIdentifier: 
-  nombre: Fuego
+  nombre: Casillero
   estados:
-  - {fileID: 9204931480678746970, guid: 1ad4122b98dd57c4fbf62b6c51892bff, type: 3}
-  - {fileID: 9204931480678746970, guid: 1ad4122b98dd57c4fbf62b6c51892bff, type: 3}
-  - {fileID: 9204931480678746970, guid: 1ad4122b98dd57c4fbf62b6c51892bff, type: 3}
-  - {fileID: 9204931480678746970, guid: 1ad4122b98dd57c4fbf62b6c51892bff, type: 3}
+  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
+  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
+  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
+  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
   estadoActual: 0
   tipoObjeto: 1
-  objeto: 2
+  objeto: 3
   tipoUso: 0
   activable: 1
   objetoNecesario: 0
   dialogo: 
-  contenidoSpawn: {fileID: 3708013602888420960, guid: 6606809ee059d524181fe31338fde62b, type: 3}
+  contenidoSpawn: {fileID: 4565876555182281202, guid: e9f0f25662bc75640a0435056ae05904, type: 3}
+  noNecesitaObjeto: 1

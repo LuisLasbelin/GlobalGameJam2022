@@ -143,7 +143,6 @@ public class GameManager : MonoBehaviour
                 ObjetoSO _invSo = inventario.GetComponent<ObjetoInteraccion>().so;
                 if (objetivo.objetoNecesario.Equals(_invSo.objeto))
                 {
-                    Debug.Log(_invSo.name + "aaaaaa");
                     // Resultado del objeto del inventario
                     switch (_invSo.tipoUso)
                     {
@@ -168,8 +167,8 @@ public class GameManager : MonoBehaviour
                     Debug.Log(objetivo.objeto.ToString());
 
                     if ("fuego".Equals(objetivo.objeto.ToString())){
-                        _objetoInteraccion.transform.parent.gameObject.SetActive(false);
-                        Debug.Log("Soy fuego");
+                        
+                        _objetoInteraccion.transform.parent.transform.position = new Vector2(2000, 2000);
                     }
                     Debug.Log("Activado aaa");
                 }
