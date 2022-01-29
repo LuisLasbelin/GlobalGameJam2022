@@ -127,6 +127,10 @@ public class GameManager : MonoBehaviour
             inventario.transform.position = new Vector2(999,999);
 
             _objetoInteraccion.Mostrar(false);
+            // esta mierda es larguisima, pero basicamente recoge el sprite del objeto que
+            // llevas en el inventario
+            Sprite _sprite = inventario.GetComponent<ObjetoInteraccion>().spriteObj.GetComponent<SpriteRenderer>().sprite;
+            inventarioUi.sprite = _sprite;
             //objeto.GetComponent<ObjetoInteraccion>().enabled = false;
         }
     }
