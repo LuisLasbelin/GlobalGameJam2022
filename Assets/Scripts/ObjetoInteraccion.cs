@@ -53,7 +53,7 @@ public class ObjetoInteraccion : MonoBehaviour {
 
     public void RecogerObjeto() {
         manager.recogerObjeto(this);
-        Debug.Log("Objeto recogido: " + gameObject.name);
+        //Debug.Log("Objeto recogido: " + gameObject.name);
     }
 
     public void ActivarObjeto() {

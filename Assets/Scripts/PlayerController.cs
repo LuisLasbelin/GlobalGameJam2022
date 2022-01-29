@@ -119,12 +119,12 @@ public class PlayerController : MonoBehaviour
      * @return bool
      */
     private bool Interact() {
-        Debug.Log("Boton Interaccion pulsado");
+        //Debug.Log("Boton Interaccion pulsado");
         // Calcula el objeto más cercano dentro de su rango e interacciona con él
         if(_masCercano == null) {
             return false;
         }
-        Debug.Log("Interacciona con: " + _masCercano.name);
+        //Debug.Log("Interacciona con: " + _masCercano.name);
         // interaccion del objeto
         _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
         // Animacion
