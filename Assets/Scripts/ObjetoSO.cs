@@ -14,7 +14,8 @@ public class ObjetoSO : ScriptableObject
     public enum tipoObjetoEnum {
         recoger,
         uso,
-        dialogo
+        dialogo,
+        portal
     };
 
     public enum tipoUsoEnum {

@@ -14,6 +14,8 @@ public class SaltoTemporal : MonoBehaviour
     void Start() {
         pasadoScene = SceneManager.GetSceneByBuildIndex(pasadoInd);
         presenteScene = SceneManager.GetSceneByBuildIndex(presenteInd);
+        presenteActivo = true;
+        desactivarObjetos(pasadoScene);
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }

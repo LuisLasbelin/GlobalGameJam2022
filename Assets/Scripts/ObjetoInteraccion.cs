@@ -39,6 +39,9 @@ public class ObjetoInteraccion : MonoBehaviour {
             case ObjetoSO.tipoObjetoEnum.dialogo:
                 DialogoObjeto();
                 break;
+            case ObjetoSO.tipoObjetoEnum.portal:
+                manager.SaltoTemporal();
+                break;
             default:
                 break;
         }
