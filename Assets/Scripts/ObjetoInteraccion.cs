@@ -9,13 +9,21 @@ public class ObjetoInteraccion : MonoBehaviour {
     public GameObject exclamacion;
     SpriteRenderer sr;
     GameManager manager;
+    public Transform portalSalida;
 
-    private void Start() {
+    private void Awake() {
         sr = spriteObj.GetComponent<SpriteRenderer>();
 
         cerca = false;
 
         sr.sprite = so.estados[estado]; // estado default
+        
+        // En caso de que la animacion ya se haya activado antes
+        // Animacion Activated
+        Animator _anim = spriteObj.GetComponent<Animator>();
+        if(_anim != null) {
+            _anim.SetInteger("Estado", estado);
+        }
 
         exclamacion.SetActive(false);
 
@@ -27,23 +35,23 @@ public class ObjetoInteraccion : MonoBehaviour {
         exclamacion.SetActive(vf);
     }
 
-    public void Interaccion() {
+    public bool Interaccion() {
         switch (so.tipoObjeto)
         {
             case ObjetoSO.tipoObjetoEnum.recoger:
                 RecogerObjeto();
-                break;
+                return true;
             case ObjetoSO.tipoObjetoEnum.uso:
                 ActivarObjeto();
-                break;
+                return true;
             case ObjetoSO.tipoObjetoEnum.dialogo:
                 DialogoObjeto();
-                break;
+                return true;
             case ObjetoSO.tipoObjetoEnum.portal:
-                manager.SaltoTemporal();
-                break;
+                manager.SaltoTemporal(portalSalida);
+                return false;
             default:
-                break;
+                return false;
         }
     }
 
@@ -59,6 +67,14 @@ public class ObjetoInteraccion : MonoBehaviour {
     public void ActivarObjeto() {
         manager.usarObjeto(this, so);
         Debug.Log("Objeto activado: " + gameObject.name);
+        // Animacion Activate
+        Animator _anim = spriteObj.GetComponent<Animator>();
+        if(_anim != null) {
+            _anim.SetTrigger("Activate");
+            
+            estado = 2;
+            _anim.SetInteger("Estado", estado);
+        }
     }
 
     public void DialogoObjeto() {

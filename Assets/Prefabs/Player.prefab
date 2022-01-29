@@ -167,7 +167,7 @@ MonoBehaviour:
   _objetosEnRango: []
   animator: {fileID: 0}
   parado: 0
-  maxParadoTimer: 1
+  maxParadoTimer: 0.5
 --- !u!58 &2116001527757732208
 CircleCollider2D:
   m_ObjectHideFlags: 0

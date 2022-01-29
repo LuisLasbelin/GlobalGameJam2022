@@ -16,18 +16,19 @@ public class GameManager : MonoBehaviour
     Scene presenteScene;
     public bool presenteActivo = true;
     GameManager gameManager;
+    public Animator fundidoAnim;
 
     void Start() {
         pasadoScene = SceneManager.GetSceneByBuildIndex(pasadoInd);
         presenteScene = SceneManager.GetSceneByBuildIndex(presenteInd);
         presenteActivo = true;
-        desactivarObjetos(pasadoScene);
+        //desactivarObjetos(pasadoScene);
 
         gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     #region Salto temporal
-    public void SaltoTemporal()
+    public void SaltoTemporal(Transform portalSalida)
     {
         if (gameManager.inventario != null)
         {
@@ -45,8 +46,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        fundidoAnim.SetTrigger("Next");
+
+        PlayerController playerController = personaje.GetComponent<PlayerController>();
+        playerController.Viaje(portalSalida);
+
         // Pasado_Test
         // Presente_Test
+        /*
         if (!presenteActivo)
         {
             // Pillamos la escena activa
@@ -71,6 +78,7 @@ public class GameManager : MonoBehaviour
             SceneManager.SetActiveScene(pasadoScene);
             presenteActivo = !presenteActivo;
         }
+        */
     }
 
     public void desactivarObjetos(Scene tiempo)

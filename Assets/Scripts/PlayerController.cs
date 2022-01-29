@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float actionRange;
     GameManager manager;
-    [SerializeField]
     private List<GameObject> _objetosEnRango = new List<GameObject>();
     private GameObject _masCercano;
     private Rigidbody2D rb;
-    public Animator animator;
+    public Transform mainCamera;
+    Animator animator;
     public bool parado = false;
+    bool viajando = false;
+    Transform portalSalida;
     public float maxParadoTimer;
     float paradoTimer;
 
@@ -59,6 +61,13 @@ public class PlayerController : MonoBehaviour
         if(paradoTimer <= 0) {
             parado = false;
             paradoTimer = maxParadoTimer;
+            if(viajando) {
+                viajando = false;
+                // Transporta la camara y el jugador a la otra sala
+                transform.position = portalSalida.position;
+                mainCamera.transform.position = new Vector3(portalSalida.position.x, portalSalida.position.y, mainCamera.transform.position.z);
+
+            }
         }
         #endregion
     }
@@ -126,11 +135,19 @@ public class PlayerController : MonoBehaviour
         }
         //Debug.Log("Interacciona con: " + _masCercano.name);
         // interaccion del objeto
-        _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
+        bool _animacion = _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
         // Animacion
-        animator.SetTrigger("Pickup");
-        parado = true;
+        if(_animacion) {
+            animator.SetTrigger("Pickup");
+            parado = true;
+        }
         return true; // interaccion correcta
+    }
+
+    public void Viaje(Transform _portalSalida) {
+        parado = true;
+        viajando = true;
+        portalSalida = _portalSalida;
     }
 
     private void OnDrawGizmos() {
