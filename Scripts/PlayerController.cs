@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     private GameObject _masCercano;
     private Rigidbody2D rb;
     public Animator animator;
+    public bool parado = false;
+    public float maxParadoTimer;
+    float paradoTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -19,18 +22,24 @@ public class PlayerController : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponentInChildren<Animator>();
+        parado = false;
+        paradoTimer = maxParadoTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
         #region Movimiento del jugador
-        Vector3 movimiento = new Vector2(Input.GetAxis(input.horizontal), Input.GetAxis(input.vertical));
+        if(!parado) {
+            Vector3 movimiento = new Vector2(Input.GetAxis(input.horizontal), Input.GetAxis(input.vertical));
 
-        rb.velocity = movimiento * speed;
+            rb.velocity = movimiento * speed;
 
-        animator.SetInteger("Horizontal", Mathf.RoundToInt(movimiento.x));
-        animator.SetInteger("Vertical", Mathf.RoundToInt(movimiento.y));
+            animator.SetInteger("Horizontal", Mathf.RoundToInt(movimiento.x));
+            animator.SetInteger("Vertical", Mathf.RoundToInt(movimiento.y));
+        } else {
+            rb.velocity = Vector2.zero;
+        }
         #endregion
 
         #region Interaccionar con un objeto
@@ -42,6 +51,16 @@ public class PlayerController : MonoBehaviour
         #endregion
 
         Comprobarbjetos();
+
+        #region Timer parado
+        if(parado) {
+            paradoTimer -= Time.deltaTime;
+        }
+        if(paradoTimer <= 0) {
+            parado = false;
+            paradoTimer = maxParadoTimer;
+        }
+        #endregion
     }
 
     private void Comprobarbjetos() {
@@ -110,6 +129,7 @@ public class PlayerController : MonoBehaviour
         _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
         // Animacion
         animator.SetTrigger("Pickup");
+        parado = true;
         return true; // interaccion correcta
     }
 
