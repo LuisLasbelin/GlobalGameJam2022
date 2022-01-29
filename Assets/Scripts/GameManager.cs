@@ -138,38 +138,52 @@ public class GameManager : MonoBehaviour
     {
         if (objetivo.activable)
         {
-            ObjetoSO _invSo = inventario.GetComponent<ObjetoInteraccion>().so;
-            if(objetivo.objetoNecesario.Equals(_invSo.objeto))
+            if(inventario != null)
             {
-                // Resultado del objeto del inventario
-                switch (_invSo.tipoUso)
+                ObjetoSO _invSo = inventario.GetComponent<ObjetoInteraccion>().so;
+                if (objetivo.objetoNecesario.Equals(_invSo.objeto))
                 {
-                    case ObjetoSO.tipoUsoEnum.cambioEstado:
-                        _invSo.estadoActual = 1;
-                        break;
-                    case ObjetoSO.tipoUsoEnum.consumible:
-                        inventario = null;
-                        break;
-                    case ObjetoSO.tipoUsoEnum.estatico:
-                        break;
-                    default:
-                        break;
+                    Debug.Log(_invSo.name + "aaaaaa");
+                    // Resultado del objeto del inventario
+                    switch (_invSo.tipoUso)
+                    {
+                        case ObjetoSO.tipoUsoEnum.cambioEstado:
+                            _invSo.estadoActual = 1;
+                            break;
+                        case ObjetoSO.tipoUsoEnum.consumible:
+                            Debug.Log("Hey escucha");
+                            inventario = null;
+                            break;
+                        case ObjetoSO.tipoUsoEnum.estatico:
+                            break;
+                        default:
+                            break;
+                    }
+                    // Resultado del objetivo
+                    if (objetivo.contenidoSpawn != null)
+                    {
+                        Instantiate(objetivo.contenidoSpawn, personaje.transform.position, Quaternion.identity);
+                    }
+
+                    Debug.Log(objetivo.objeto.ToString());
+
+                    if ("fuego".Equals(objetivo.objeto.ToString())){
+                        _objetoInteraccion.transform.parent.gameObject.SetActive(false);
+                        Debug.Log("Soy fuego");
+                    }
+                    Debug.Log("Activado aaa");
                 }
-                // Resultado del objetivo
-                if(objetivo.contenidoSpawn != null) {
-                    Instantiate(objetivo.contenidoSpawn, personaje.transform.position, Quaternion.identity);
+                else
+                {
+                    Debug.Log("No tienes el objeto necesario");
                 }
 
                 Debug.Log("Activado");
             }
-            else
-            {
-                Debug.Log("No tienes el objeto necesario");
-            }
         }
         else 
         {
-            Debug.Log("Activado");
+            Debug.Log("Activado bbb");
         }
     }
 }
