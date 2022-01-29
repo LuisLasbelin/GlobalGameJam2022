@@ -16,12 +16,20 @@ public class GameManager : MonoBehaviour
             objeto.GetComponent<SpriteRenderer>().enabled = false;
             objeto.GetComponent<ObjetoInteraccion>().enabled = false;
 
+        }else if(inventario != "")
+        {
+            soltarObjeto();
+
+            inventario = objeto.name;
+
+            objeto.GetComponent<SpriteRenderer>().enabled = false;
+            objeto.GetComponent<ObjetoInteraccion>().enabled = false;
         }
     }
 
     public void soltarObjeto()
     {
-        if (inventario != null)
+        if (inventario != "")
         {
             GameObject objeto =  GameObject.Find(inventario);
             objeto.transform.position = personaje.transform.position;
