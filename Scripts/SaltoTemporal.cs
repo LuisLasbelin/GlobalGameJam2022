@@ -12,7 +12,7 @@ public class SaltoTemporal : MonoBehaviour
     public int presenteInd;
     Scene presenteScene;
     public bool presenteActivo = true;
-
+    public GameManager gameManager;
     void Start() {
         pasadoScene = SceneManager.GetSceneByBuildIndex(pasadoInd);
         presenteScene = SceneManager.GetSceneByBuildIndex(presenteInd);
@@ -29,6 +29,23 @@ public class SaltoTemporal : MonoBehaviour
 
     private void cambio()
     {
+        if (gameManager.inventario != null)
+        {
+
+            GameObject objeto = gameManager.inventario;
+            objeto.transform.position = jugador.transform.position;
+
+            if (!presenteActivo)
+            {
+                SceneManager.MoveGameObjectToScene(objeto, presenteScene);
+            }
+            else
+            {
+                SceneManager.MoveGameObjectToScene(objeto, pasadoScene);
+            
+            }
+        }
+
         // Pasado_Test
         // Presente_Test
         if (!presenteActivo)
