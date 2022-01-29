@@ -28,11 +28,15 @@ public class ObjetoInteraccion : MonoBehaviour {
         // TODO: cada objeto tendra interacciones diferentes
         
         // Objeto recoger
-        if(so.tipoObjeto == 0)
+        if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.recoger)
         {
             GameObject manager = GameObject.FindWithTag("GameManager");
-            manager.GetComponent<GameManager>().recogerObjeto(gameObject);
-            Debug.Log("Hey escucha");
+            manager.GetComponent<GameManager>().recogerObjeto(this);
+            Debug.Log("Objeto recogido: " + gameObject.name);
         }
+    }
+
+    public void Mostrar(bool _estado) {
+        spriteObj.SetActive(_estado);
     }
 }

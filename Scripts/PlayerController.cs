@@ -5,51 +5,55 @@ public class PlayerController : MonoBehaviour
 {
     public InputManager input;
     public float speed;
+    public float actionRange;
+    GameManager manager;
+    [SerializeField]
     private List<GameObject> _objetosEnRango = new List<GameObject>();
+    private GameObject _masCercano;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         #region Movimiento del jugador
         Vector3 movimiento = new Vector2(Input.GetAxis(input.horizontal), Input.GetAxis(input.vertical));
 
         transform.position += movimiento * Time.deltaTime * speed;
         #endregion
+
         #region Interaccionar con un objeto
         if(Input.GetButtonDown(input.interact)) Interact();
         #endregion
 
-        // Mover al input manager
-        if (Input.GetKeyDown(KeyCode.E))
+        #region Usar objeto del inventario
+        if(Input.GetButtonDown(input.usarInventario)) manager.soltarObjeto();
+        #endregion
+
+        Comprobarbjetos();
+    }
+
+    private void Comprobarbjetos() {
+        _objetosEnRango.Clear();
+        ObjetoInteraccion[] _objetos = GameObject.FindObjectsOfType<ObjetoInteraccion>();
+        for (int i = 0; i < _objetos.Length; i++)
         {
-            GameObject manager = GameObject.FindWithTag("GameManager");
-            manager.GetComponent<GameManager>().soltarObjeto();
+            _objetos[i].PuedeInteraccionar(false);
+            float _distancia = Vector2.Distance(transform.position, _objetos[i].transform.position);
+            if(_distancia < actionRange) {
+                _objetosEnRango.Add(_objetos[i].gameObject);
+            }
+        }
+
+        if(_objetosEnRango.Count > 0) {
+            MasCercano();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        // Cuando entra un objeto dentro del area de interaccion debe poder interactuar
-        if(other.gameObject.GetComponent<ObjetoInteraccion>()) {
-            _objetosEnRango.Add(other.gameObject);
-        }
-        MasCercano();
-        Debug.Log("Nueva colision de: " + gameObject.name + " con: " + other.gameObject.name);
-    }
-
-    private void OnTriggerExit2D(Collider2D other) {
-        // Una vez sale del rango de un objeto, lo elimina de su rango de interaccion
-        if(_objetosEnRango.Contains(other.gameObject)){
-            _objetosEnRango.Remove(other.gameObject);
-            other.gameObject.GetComponent<ObjetoInteraccion>().PuedeInteraccionar(false);
-        }
-        MasCercano();
-    }
     /**
      * MasCercano
      * 
@@ -58,11 +62,12 @@ public class PlayerController : MonoBehaviour
      * @return GameObjet
      */
     private GameObject MasCercano() {
-        if(_objetosEnRango.Count < 1) {
+        if(_objetosEnRango.Count == 0) {
+            _masCercano = null;
             return null;
         }
         // Calcula las distancias para encontrar el objeto mas cercano
-        GameObject _masCercano = _objetosEnRango[0];
+        _masCercano = _objetosEnRango[0];
         float _distanciaMenor = Vector2.Distance(_objetosEnRango[0].transform.position, transform.position);
         foreach (GameObject _objeto in _objetosEnRango)
         {
@@ -90,18 +95,24 @@ public class PlayerController : MonoBehaviour
      * @return bool
      */
     private bool Interact() {
+        Debug.Log("Boton Interaccion pulsado");
         // Calcula el objeto más cercano dentro de su rango e interacciona con él
-        GameObject _objeto = MasCercano();
-        if(_objeto == null) {
+        if(_masCercano == null) {
             return false;
         }
+        Debug.Log("Interacciona con: " + _masCercano.name);
         // interaccion del objeto
-        _objeto.GetComponent<ObjetoInteraccion>().Interaccion();
+        _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
         return true; // interaccion correcta
     }
 
     private void recogerObjeto()
     {
 
+    }
+
+    private void OnDrawGizmos() {
+        Gizmos.DrawWireSphere(transform.position, actionRange);
+        Gizmos.color = Color.green;
     }
 }
