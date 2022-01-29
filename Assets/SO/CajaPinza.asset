@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00abed29483602439acfebc210e2106, type: 3}
+  m_Name: CajaPinza
+  m_EditorClassIdentifier: 
+  nombre: Caja vieja
+  estados:
+  - {fileID: 21300000, guid: 48ebbae5800440442b644f6312a5da4a, type: 3}
+  - {fileID: 21300000, guid: 48ebbae5800440442b644f6312a5da4a, type: 3}
+  - {fileID: 21300000, guid: 48ebbae5800440442b644f6312a5da4a, type: 3}
+  - {fileID: 21300000, guid: 48ebbae5800440442b644f6312a5da4a, type: 3}
+  estadoActual: 0
+  tipoObjeto: 1
+  objeto: 9
+  tipoUso: 0
+  activable: 1
+  objetoNecesario: 1
+  dialogo: 
+  contenidoSpawn: {fileID: 1762934545094347235, guid: 6f084ddafa231ac4bb5a3203c1e52758, type: 3}
