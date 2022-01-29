@@ -42,4 +42,9 @@ public class GameManager : MonoBehaviour
             inventario = null;
         }
     }
+
+    public void usarObjeto()
+    {
+
+    }
 }
