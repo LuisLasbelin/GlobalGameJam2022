@@ -18,6 +18,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e9b48191e70d9bf4495b2c0a710f609a, type: 3}
   - {fileID: 21300000, guid: e9b48191e70d9bf4495b2c0a710f609a, type: 3}
   - {fileID: 21300000, guid: e9b48191e70d9bf4495b2c0a710f609a, type: 3}
+  estadoActual: 0
   tipoObjeto: 1
+  objeto: 0
+  tipoUso: 0
   activable: 1
-  objetoNecesario: Caja
+  objetoNecesario: 11
+  dialogo: 
+  contenidoSpawn: {fileID: 0}
+  tiene_usos: 0
+  numero_de_usos: 0

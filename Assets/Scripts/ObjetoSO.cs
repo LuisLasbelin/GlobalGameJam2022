@@ -35,7 +35,8 @@ public class ObjetoSO : ScriptableObject
         caja,
         dispensador_agua,
         caja_vieja,
-        caja_nueva
+        caja_nueva,
+        Ninguno
     }
 
     public bool activable;

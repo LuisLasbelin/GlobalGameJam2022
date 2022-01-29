@@ -23,7 +23,8 @@ MonoBehaviour:
   objeto: 0
   tipoUso: 0
   activable: 0
-  objetoNecesario: 0
+  objetoNecesario: 11
   dialogo: 
   contenidoSpawn: {fileID: 0}
-  noNecesitaObjeto: 0
+  tiene_usos: 0
+  numero_de_usos: 0

@@ -23,8 +23,8 @@ MonoBehaviour:
   objeto: 3
   tipoUso: 0
   activable: 1
-  objetoNecesario: 0
+  objetoNecesario: 11
   dialogo: 
   contenidoSpawn: {fileID: 4565876555182281202, guid: e9f0f25662bc75640a0435056ae05904, type: 3}
   tiene_usos: 1
-  numero_de_usos: 1
+  numero_de_usos: 10

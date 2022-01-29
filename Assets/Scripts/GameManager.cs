@@ -170,6 +170,7 @@ public class GameManager : MonoBehaviour
         {
             if (inventario != null)
             {
+
                 ObjetoSO _invSo = inventario.GetComponent<ObjetoInteraccion>().so;
                 if (objetivo.objetoNecesario.Equals(_invSo.objeto))
                 {
@@ -210,6 +211,14 @@ public class GameManager : MonoBehaviour
                 }
 
                 Debug.Log("Activado");
+            }
+            else if("Ninguno".Equals(objetivo.objetoNecesario.ToString())){
+                
+                // Resultado del objetivo
+                if (objetivo.contenidoSpawn != null)
+                {
+                    Instantiate(objetivo.contenidoSpawn, personaje.transform.position, Quaternion.identity);
+                }
             }
         }
     }
