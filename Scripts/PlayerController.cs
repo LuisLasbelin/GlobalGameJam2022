@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private List<GameObject> _objetosEnRango = new List<GameObject>();
     private GameObject _masCercano;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
         #region Movimiento del jugador
         Vector3 movimiento = new Vector2(Input.GetAxis(input.horizontal), Input.GetAxis(input.vertical));
 
-        transform.position += movimiento * Time.deltaTime * speed;
+        rb.velocity = movimiento * speed;
         #endregion
 
         #region Interaccionar con un objeto
