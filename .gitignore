@@ -7,4 +7,5 @@ UserSettings/
 .vsconfig
 .csproj
 *.sln
-*.csproj
+Assembly-CSharp.csproj
+TimeBox.sln

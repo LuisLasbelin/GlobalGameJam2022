@@ -28,23 +28,37 @@ public class ObjetoInteraccion : MonoBehaviour {
     }
 
     public void Interaccion() {
-        // TODO: cada objeto tendra interacciones diferentes
-        
-        // Objeto recoger
-        if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.recoger)
+        switch (so.tipoObjeto)
         {
-            manager.recogerObjeto(this);
-            Debug.Log("Objeto recogido: " + gameObject.name);
-
-        }else if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.activar)
-        {
-            GameObject manager = GameObject.FindWithTag("GameManager");
-            manager.GetComponent<GameManager>().usarObjeto(this, so);
-            Debug.Log("Objeto activado: " + gameObject.name);
+            case ObjetoSO.tipoObjetoEnum.recoger:
+                RecogerObjeto();
+                break;
+            case ObjetoSO.tipoObjetoEnum.uso:
+                ActivarObjeto();
+                break;
+            case ObjetoSO.tipoObjetoEnum.dialogo:
+                DialogoObjeto();
+                break;
+            default:
+                break;
         }
     }
 
     public void Mostrar(bool _estado) {
         spriteObj.SetActive(_estado);
+    }
+
+    public void RecogerObjeto() {
+        manager.recogerObjeto(this);
+        Debug.Log("Objeto recogido: " + gameObject.name);
+    }
+
+    public void ActivarObjeto() {
+        manager.usarObjeto(this, so);
+        Debug.Log("Objeto activado: " + gameObject.name);
+    }
+
+    public void DialogoObjeto() {
+
     }
 }

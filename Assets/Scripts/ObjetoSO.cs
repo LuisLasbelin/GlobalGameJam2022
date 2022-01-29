@@ -5,22 +5,38 @@ using UnityEngine;
 public class ObjetoSO : ScriptableObject
 {
     public string nombre;
-    /* Estados
-    0: default futuro
-    1: default pasado
-    2: activado futuro
-    3: activado pasado
-    */
     public List<Sprite> estados;
-
-    public tipoObjetoEnum tipoObjeto = tipoObjetoEnum.recoger;
+    public int estadoActual = 0;
+    public tipoObjetoEnum tipoObjeto;
+    public objetoEnum objeto;
+    public tipoUsoEnum tipoUso;
 
     public enum tipoObjetoEnum {
         recoger,
-        activar,
+        uso,
         dialogo
     };
 
+    public enum tipoUsoEnum {
+        consumible,
+        cambioEstado,
+        estatico
+    }
+
+    public enum objetoEnum {
+        cubo,
+        pinzas,
+        fuego,
+        casillero, 
+        palanca,
+        tarjeta,
+        lector,
+        caja,
+        dispensador_agua
+    }
+
     public bool activable;
-    public string objetoNecesario;
+    public objetoEnum objetoNecesario;
+    public string dialogo;
+    public GameObject contenidoSpawn;
 }

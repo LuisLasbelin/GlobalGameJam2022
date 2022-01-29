@@ -43,19 +43,38 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void usarObjeto(ObjetoInteraccion _objetoInteraccion, ObjetoSO so)
+    public void usarObjeto(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo)
     {
-        if (so.activable)
+        if (objetivo.activable)
         {
-            if(so.objetoNecesario.Equals(inventario.gameObject.name))
+            ObjetoSO _invSo = inventario.GetComponent<ObjetoInteraccion>().so;
+            if(objetivo.objetoNecesario.Equals(_invSo.objeto))
             {
+                // Resultado del objeto del inventario
+                switch (_invSo.tipoUso)
+                {
+                    case ObjetoSO.tipoUsoEnum.cambioEstado:
+                        _invSo.estadoActual = 1;
+                        break;
+                    case ObjetoSO.tipoUsoEnum.consumible:
+                        inventario = null;
+                        break;
+                    case ObjetoSO.tipoUsoEnum.estatico:
+                        break;
+                    default:
+                        break;
+                }
+                // Resultado del objetivo
+                if(objetivo.contenidoSpawn != null) {
+                    Instantiate(objetivo.contenidoSpawn, personaje.transform.position, Quaternion.identity);
+                }
+                
                 Debug.Log("Activado");
             }
             else
             {
                 Debug.Log("No tienes el objeto necesario");
             }
-            
         }
         else 
         {
