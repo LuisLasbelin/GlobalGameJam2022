@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
     private List<GameObject> _objetosEnRango = new List<GameObject>();
     private GameObject _masCercano;
     private Rigidbody2D rb;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,9 @@ public class PlayerController : MonoBehaviour
         Vector3 movimiento = new Vector2(Input.GetAxis(input.horizontal), Input.GetAxis(input.vertical));
 
         rb.velocity = movimiento * speed;
+
+        animator.SetInteger("Horizontal", Mathf.RoundToInt(movimiento.x));
+        animator.SetInteger("Vertical", Mathf.RoundToInt(movimiento.y));
         #endregion
 
         #region Interaccionar con un objeto
@@ -51,9 +56,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(_objetosEnRango.Count > 0) {
-            MasCercano();
-        }
+        MasCercano();
     }
 
     /**

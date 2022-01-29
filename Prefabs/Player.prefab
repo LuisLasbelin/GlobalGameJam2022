@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2116001527742273870}
   - component: {fileID: 2116001527742273871}
   - component: {fileID: 2116001527742273868}
+  - component: {fileID: 3544033583442667391}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1366363123
-  m_SortingLayer: 0
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5482e3eae944f534aafe7e8bf1430136, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,6 +96,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f995349c906e67a4cac83834e6c8045b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3544033583442667391
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116001527742273905}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 59ddc63d964e9e247a76566b8040346a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2116001527757732212
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,6 +165,7 @@ MonoBehaviour:
   speed: 3
   actionRange: 1.51
   _objetosEnRango: []
+  animator: {fileID: 0}
 --- !u!58 &2116001527757732208
 CircleCollider2D:
   m_ObjectHideFlags: 0

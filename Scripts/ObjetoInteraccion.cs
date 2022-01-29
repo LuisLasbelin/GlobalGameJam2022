@@ -8,6 +8,7 @@ public class ObjetoInteraccion : MonoBehaviour {
     public int estado;
     public GameObject exclamacion;
     SpriteRenderer sr;
+    GameManager manager;
 
     private void Start() {
         sr = spriteObj.GetComponent<SpriteRenderer>();
@@ -17,6 +18,8 @@ public class ObjetoInteraccion : MonoBehaviour {
         sr.sprite = so.estados[estado]; // estado default
 
         exclamacion.SetActive(false);
+
+        manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
 
     public void PuedeInteraccionar(bool vf) {
@@ -30,13 +33,11 @@ public class ObjetoInteraccion : MonoBehaviour {
         // Objeto recoger
         if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.recoger)
         {
-            GameObject manager = GameObject.FindWithTag("GameManager");
-            manager.GetComponent<GameManager>().recogerObjeto(this);
+            manager.recogerObjeto(this);
             Debug.Log("Objeto recogido: " + gameObject.name);
         }else if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.recoger)
         {
-            GameObject manager = GameObject.FindWithTag("GameManager");
-            manager.GetComponent<GameManager>().usarObjeto(this);
+            //manager.usarObjeto(this);
             Debug.Log("Objeto usado: " + gameObject.name);
         }
     }
