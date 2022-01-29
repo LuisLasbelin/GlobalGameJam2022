@@ -1,8 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class GameManager : MonoBehaviour
 {
     public GameObject inventario = null;
+    public Image inventarioUi;
+    public Sprite spriteVacio;
     public GameObject personaje;
     public InputManager input;
     public int pasadoInd;
@@ -106,6 +111,11 @@ public class GameManager : MonoBehaviour
             
             _objetoInteraccion.Mostrar(false);
             //objeto.GetComponent<ObjetoInteraccion>().enabled = false;
+
+            // esta mierda es larguisima, pero basicamente recoge el sprite del objeto que
+            // llevas en el inventario
+            Sprite _sprite = inventario.GetComponent<ObjetoInteraccion>().spriteObj.GetComponent<SpriteRenderer>().sprite;
+            inventarioUi.sprite = _sprite;
         }
         // Si ya tiene algo en el inventario
         else
@@ -130,7 +140,7 @@ public class GameManager : MonoBehaviour
             inventario.GetComponent<ObjetoInteraccion>().Mostrar(true);
             //objeto.GetComponent<ObjetoInteraccion>().enabled = true;
         
-            inventario = null;
+            LimpiarInventario();
         }
     }
 
@@ -152,7 +162,8 @@ public class GameManager : MonoBehaviour
                             break;
                         case ObjetoSO.tipoUsoEnum.consumible:
                             Debug.Log("Hey escucha");
-                            inventario = null;
+                            // Elimina la referencia del objeto llevado
+                            LimpiarInventario();
                             break;
                         case ObjetoSO.tipoUsoEnum.estatico:
                             break;
@@ -185,5 +196,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Activado bbb");
         }
+    }
+
+    public void LimpiarInventario() {
+        // Elimina la referencia del objeto llevado
+        inventario = null;
+        inventarioUi.sprite = spriteVacio;
     }
 }
