@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b00abed29483602439acfebc210e2106, type: 3}
-  m_Name: Palanca
+  m_Name: Lector
   m_EditorClassIdentifier: 
-  nombre: Palanca
+  nombre: Lector
   estados:
-  - {fileID: 21300000, guid: 0ccb095ea02b17d47890c4b3b38e1ad2, type: 3}
-  - {fileID: 21300000, guid: 0ccb095ea02b17d47890c4b3b38e1ad2, type: 3}
-  - {fileID: 21300000, guid: 0ccb095ea02b17d47890c4b3b38e1ad2, type: 3}
-  - {fileID: 21300000, guid: 0ccb095ea02b17d47890c4b3b38e1ad2, type: 3}
+  - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
+  - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
+  - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
+  - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
   estadoActual: 0
-  tipoObjeto: 0
-  objeto: 4
-  tipoUso: 2
-  activable: 0
-  objetoNecesario: 11
+  tipoObjeto: 1
+  objeto: 0
+  tipoUso: 0
+  activable: 1
+  objetoNecesario: 5
   dialogo: 
   contenidoSpawn: {fileID: 0}
-  tiene_usos: 0
-  numero_de_usos: 0
+  tiene_usos: 1
+  numero_de_usos: 2

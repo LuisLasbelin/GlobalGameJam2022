@@ -158,10 +158,27 @@ public class GameManager : MonoBehaviour
 
     public void usarObjeto(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo)
     {
+        if(objetivo.tiene_usos)
+        {
+            if(objetivo.numero_de_usos > _objetoInteraccion.usos)
+            {
+                Debug.Log("Hola buenos dias");
+                _objetoInteraccion.usos = _objetoInteraccion.usos + 1;
+                activarUso(_objetoInteraccion, objetivo);
+            }
+        }
+        else
+        {
+            activarUso(_objetoInteraccion, objetivo);
+        }
+    }
+    public void activarUso(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo)
+    {
         if (objetivo.activable)
         {
-            if(inventario != null)
+            if (inventario != null)
             {
+
                 ObjetoSO _invSo = inventario.GetComponent<ObjetoInteraccion>().so;
                 if (objetivo.objetoNecesario.Equals(_invSo.objeto))
                 {
@@ -189,8 +206,9 @@ public class GameManager : MonoBehaviour
 
                     Debug.Log(objetivo.objeto.ToString());
 
-                    if ("fuego".Equals(objetivo.objeto.ToString())){
-                        
+                    if ("fuego".Equals(objetivo.objeto.ToString()))
+                    {
+
                         _objetoInteraccion.transform.parent.transform.position = new Vector2(2000, 2000);
                     }
                     Debug.Log("Activado aaa");
@@ -202,10 +220,14 @@ public class GameManager : MonoBehaviour
 
                 Debug.Log("Activado");
             }
-        }
-        else 
-        {
-            Debug.Log("Activado bbb");
+            else if("Ninguno".Equals(objetivo.objetoNecesario.ToString())){
+                
+                // Resultado del objetivo
+                if (objetivo.contenidoSpawn != null)
+                {
+                    Instantiate(objetivo.contenidoSpawn, personaje.transform.position, Quaternion.identity);
+                }
+            }
         }
     }
 

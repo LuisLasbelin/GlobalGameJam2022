@@ -14,16 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nombre: Casillero
   estados:
-  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
-  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
-  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
-  - {fileID: 21300000, guid: 65d0bd7d2736c6e4c819969e254804c6, type: 3}
+  - {fileID: 21300000, guid: b5e77191c126aa24cbc23a9595978860, type: 3}
+  - {fileID: 21300000, guid: b5e77191c126aa24cbc23a9595978860, type: 3}
+  - {fileID: 21300000, guid: b5e77191c126aa24cbc23a9595978860, type: 3}
+  - {fileID: 21300000, guid: b5e77191c126aa24cbc23a9595978860, type: 3}
   estadoActual: 0
   tipoObjeto: 1
   objeto: 3
   tipoUso: 0
   activable: 1
-  objetoNecesario: 0
+  objetoNecesario: 11
   dialogo: 
   contenidoSpawn: {fileID: 4565876555182281202, guid: e9f0f25662bc75640a0435056ae05904, type: 3}
-  noNecesitaObjeto: 1
+  tiene_usos: 1
+  numero_de_usos: 1

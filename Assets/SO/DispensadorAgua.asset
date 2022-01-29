@@ -26,3 +26,5 @@ MonoBehaviour:
   objetoNecesario: 0
   dialogo: 
   contenidoSpawn: {fileID: 8066801675041171106, guid: 80763d586c802b74a80070538a8e9dc3, type: 3}
+  tiene_usos: 1
+  numero_de_usos: 1

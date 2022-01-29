@@ -10,6 +10,7 @@ public class ObjetoInteraccion : MonoBehaviour {
     SpriteRenderer sr;
     GameManager manager;
     public Transform portalSalida;
+    public int usos;
 
     private void Awake() {
         sr = spriteObj.GetComponent<SpriteRenderer>();

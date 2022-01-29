@@ -35,11 +35,14 @@ public class ObjetoSO : ScriptableObject
         caja,
         dispensador_agua,
         caja_vieja,
-        caja_nueva
+        caja_nueva,
+        Ninguno
     }
 
     public bool activable;
     public objetoEnum objetoNecesario;
     public string dialogo;
     public GameObject contenidoSpawn;
+    public bool tiene_usos;
+    public int numero_de_usos;
 }
