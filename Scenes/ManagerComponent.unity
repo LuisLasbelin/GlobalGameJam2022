@@ -187,6 +187,7 @@ MonoBehaviour:
   pasadoInd: 2
   presenteInd: 1
   presenteActivo: 1
+  gameManager: {fileID: 103349698}
 --- !u!1 &830763802
 GameObject:
   m_ObjectHideFlags: 0

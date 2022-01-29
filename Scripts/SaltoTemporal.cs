@@ -5,17 +5,17 @@ public class SaltoTemporal : MonoBehaviour
 {
 
     public InputManager input;
-    public GameObject jugador;
-    public GameObject camara;
     public int pasadoInd;
     Scene pasadoScene;
     public int presenteInd;
     Scene presenteScene;
     public bool presenteActivo = true;
-    public GameManager gameManager;
+    GameManager gameManager;
     void Start() {
         pasadoScene = SceneManager.GetSceneByBuildIndex(pasadoInd);
         presenteScene = SceneManager.GetSceneByBuildIndex(presenteInd);
+
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -33,7 +33,6 @@ public class SaltoTemporal : MonoBehaviour
         {
 
             GameObject objeto = gameManager.inventario;
-            objeto.transform.position = jugador.transform.position;
 
             if (!presenteActivo)
             {
