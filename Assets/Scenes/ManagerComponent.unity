@@ -184,7 +184,7 @@ MonoBehaviour:
   input: {fileID: 11400000, guid: 6baa860af9e60204c9573d900e74802f, type: 2}
   pasadoInd: 2
   presenteInd: 1
-  presenteActivo: 1
+  presenteActivo: 0
 --- !u!1 &830763802 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2116001527757732212, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
@@ -230,8 +230,8 @@ GameObject:
   - component: {fileID: 1406445114}
   - component: {fileID: 1406445113}
   - component: {fileID: 1406445112}
-  - component: {fileID: 1406445115}
   - component: {fileID: 1406445116}
+  - component: {fileID: 1406445115}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 16
+  m_AssetsPPU: 10
   m_RefResolutionX: 320
   m_RefResolutionY: 180
   m_UpscaleRT: 0
