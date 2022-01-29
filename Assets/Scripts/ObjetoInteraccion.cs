@@ -9,6 +9,7 @@ public class ObjetoInteraccion : MonoBehaviour {
     public GameObject exclamacion;
     SpriteRenderer sr;
     GameManager manager;
+    public int usos;
 
     private void Start() {
         sr = spriteObj.GetComponent<SpriteRenderer>();

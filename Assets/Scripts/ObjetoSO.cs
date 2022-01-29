@@ -42,4 +42,6 @@ public class ObjetoSO : ScriptableObject
     public objetoEnum objetoNecesario;
     public string dialogo;
     public GameObject contenidoSpawn;
+    public bool tiene_usos;
+    public int numero_de_usos;
 }
