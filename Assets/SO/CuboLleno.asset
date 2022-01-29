@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: CuboLleno
   m_EditorClassIdentifier: 
   nombre: CuboLleno
-  estados: []
+  estados:
+  - {fileID: 21300000, guid: 28d854e4474c7174fbf9ff3225756341, type: 3}
+  - {fileID: 21300000, guid: 28d854e4474c7174fbf9ff3225756341, type: 3}
+  - {fileID: 21300000, guid: 28d854e4474c7174fbf9ff3225756341, type: 3}
+  - {fileID: 21300000, guid: 28d854e4474c7174fbf9ff3225756341, type: 3}
   estadoActual: 0
   tipoObjeto: 0
   objeto: 0

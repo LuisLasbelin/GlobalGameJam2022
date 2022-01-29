@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00abed29483602439acfebc210e2106, type: 3}
   m_Name: Fuego
   m_EditorClassIdentifier: 
-  nombre: 
-  estados: []
+  nombre: Fuego
+  estados:
+  - {fileID: 21300000, guid: 6ce56af0324df4e40aa3a050ce25ac23, type: 3}
+  - {fileID: 21300000, guid: 6ce56af0324df4e40aa3a050ce25ac23, type: 3}
+  - {fileID: 21300000, guid: 6ce56af0324df4e40aa3a050ce25ac23, type: 3}
+  - {fileID: 21300000, guid: 6ce56af0324df4e40aa3a050ce25ac23, type: 3}
   estadoActual: 0
-  tipoObjeto: 0
-  objeto: 0
+  tipoObjeto: 1
+  objeto: 2
   tipoUso: 0
-  activable: 0
+  activable: 1
   objetoNecesario: 0
   dialogo: 
-  contenidoSpawn: {fileID: 0}
+  contenidoSpawn: {fileID: 3708013602888420960, guid: 6606809ee059d524181fe31338fde62b, type: 3}

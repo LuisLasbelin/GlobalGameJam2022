@@ -15,6 +15,9 @@ MonoBehaviour:
   nombre: Portal
   estados:
   - {fileID: 21300000, guid: 1de5b6e6de9a9754ba1144d23183b9b0, type: 3}
+  - {fileID: 21300000, guid: 1de5b6e6de9a9754ba1144d23183b9b0, type: 3}
+  - {fileID: 21300000, guid: 1de5b6e6de9a9754ba1144d23183b9b0, type: 3}
+  - {fileID: 21300000, guid: 1de5b6e6de9a9754ba1144d23183b9b0, type: 3}
   estadoActual: 0
   tipoObjeto: 3
   objeto: 1

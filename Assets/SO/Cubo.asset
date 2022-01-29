@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00abed29483602439acfebc210e2106, type: 3}
   m_Name: Cubo
   m_EditorClassIdentifier: 
-  nombre: 
-  estados: []
+  nombre: Cubo
+  estados:
+  - {fileID: 21300000, guid: 377ecdbe0a66bd34c8bd2a57e0a29846, type: 3}
+  - {fileID: 21300000, guid: 377ecdbe0a66bd34c8bd2a57e0a29846, type: 3}
+  - {fileID: 21300000, guid: 377ecdbe0a66bd34c8bd2a57e0a29846, type: 3}
+  - {fileID: 21300000, guid: 377ecdbe0a66bd34c8bd2a57e0a29846, type: 3}
   estadoActual: 0
   tipoObjeto: 0
   objeto: 0
