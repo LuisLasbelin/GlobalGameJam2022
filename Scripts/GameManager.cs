@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public string inventario = "";
-    public GameObject personaje;
+    public GameObject jugador;
 
     public void recogerObjeto(GameObject objeto)
     {
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         if (inventario != "")
         {
             GameObject objeto =  GameObject.Find(inventario);
-            objeto.transform.position = personaje.transform.position;
+            objeto.transform.position = jugador.transform.position;
             objeto.GetComponent<SpriteRenderer>().enabled = true;
             objeto.GetComponent<ObjetoInteraccion>().enabled = true;
          
