@@ -20,4 +20,7 @@ public class ObjetoSO : ScriptableObject
         activar,
         dialogo
     };
+
+    public bool activable;
+    public string objetoNecesario;
 }

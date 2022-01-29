@@ -33,6 +33,11 @@ public class ObjetoInteraccion : MonoBehaviour {
             GameObject manager = GameObject.FindWithTag("GameManager");
             manager.GetComponent<GameManager>().recogerObjeto(this);
             Debug.Log("Objeto recogido: " + gameObject.name);
+        }else if(so.tipoObjeto == ObjetoSO.tipoObjetoEnum.recoger)
+        {
+            GameObject manager = GameObject.FindWithTag("GameManager");
+            manager.GetComponent<GameManager>().usarObjeto(this);
+            Debug.Log("Objeto usado: " + gameObject.name);
         }
     }
 
