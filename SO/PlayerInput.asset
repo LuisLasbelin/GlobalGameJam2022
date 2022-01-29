@@ -16,3 +16,5 @@ MonoBehaviour:
   vertical: Vertical
   interact: Fire1
   pause: Cancel
+  timeTravel: Jump
+  usarInventario: Fire2

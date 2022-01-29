@@ -1,42 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public string inventario = "";
+    public GameObject inventario = null;
     public GameObject personaje;
 
-    public void recogerObjeto(GameObject objeto)
+    public void recogerObjeto(ObjetoInteraccion _objetoInteraccion)
     {
-        if(inventario == "")
+        // Si tiene el inventario vacio
+        if(inventario == null)
         {
-            inventario = objeto.name;
+            inventario = _objetoInteraccion.gameObject;
+            inventario.transform.position = new Vector2(999,999);
             
-            objeto.GetComponent<SpriteRenderer>().enabled = false;
-            objeto.GetComponent<ObjetoInteraccion>().enabled = false;
-
-        }else if(inventario != "")
+            _objetoInteraccion.Mostrar(false);
+            //objeto.GetComponent<ObjetoInteraccion>().enabled = false;
+        }
+        // Si ya tiene algo en el inventario
+        else
         {
+            Debug.Log("Tienes el inventario lleno");
             soltarObjeto();
 
-            inventario = objeto.name;
+            inventario = _objetoInteraccion.gameObject;
+            inventario.transform.position = new Vector2(999,999);
 
-            objeto.GetComponent<SpriteRenderer>().enabled = false;
-            objeto.GetComponent<ObjetoInteraccion>().enabled = false;
+            _objetoInteraccion.Mostrar(false);
+            //objeto.GetComponent<ObjetoInteraccion>().enabled = false;
         }
     }
 
     public void soltarObjeto()
     {
-        if (inventario != "")
+        if (inventario != null)
         {
-            GameObject objeto =  GameObject.Find(inventario);
-            objeto.transform.position = personaje.transform.position;
-            objeto.GetComponent<SpriteRenderer>().enabled = true;
-            objeto.GetComponent<ObjetoInteraccion>().enabled = true;
-         
-            inventario = "";
+            Debug.Log(inventario.name + " soltado!");
+            inventario.transform.position = personaje.transform.position;
+            inventario.GetComponent<ObjetoInteraccion>().Mostrar(true);
+            //objeto.GetComponent<ObjetoInteraccion>().enabled = true;
+        
+            inventario = null;
         }
     }
 }

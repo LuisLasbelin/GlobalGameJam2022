@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SaltoTemporal : MonoBehaviour
 {
 
+    public InputManager input;
     public GameObject jugador;
     public GameObject camara;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public int pasadoInd;
+    Scene pasadoScene;
+    public int presenteInd;
+    Scene presenteScene;
+    public bool presenteActivo = true;
+
+    void Start() {
+        pasadoScene = SceneManager.GetSceneByBuildIndex(pasadoInd);
+        presenteScene = SceneManager.GetSceneByBuildIndex(presenteInd);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown(input.timeTravel))
         {
             cambio();
         }
@@ -27,47 +31,29 @@ public class SaltoTemporal : MonoBehaviour
     {
         // Pasado_Test
         // Presente_Test
-        if (SceneManager.GetActiveScene().name == "Pasado_Test")
+        if (!presenteActivo)
         {
             // Pillamos la escena activa
-            Scene pasado = SceneManager.GetActiveScene();
-            desactivarObjetos(pasado);
+            desactivarObjetos(pasadoScene);
 
             // Pillamos la otra escena
-            Scene presente = SceneManager.GetSceneByName("Presente_Test");
-            activarObjetos(presente);
+            activarObjetos(presenteScene);
 
-            // Activamos la camara y el jugador
-            jugador.SetActive(true);
-            camara.SetActive(true);
+            // Cambiamos de escena
+            SceneManager.SetActiveScene(presenteScene);
+            presenteActivo = !presenteActivo;
+        }
+        else if(presenteActivo)
+        {
+            // Pillamos la escena activa
+            desactivarObjetos(presenteScene);
 
-            // Los movemos de escena
-            SceneManager.MoveGameObjectToScene(jugador, presente);
-            SceneManager.MoveGameObjectToScene(camara, presente);
+            // Pillamos la otra escena
+            activarObjetos(pasadoScene);
             
             // Cambiamos de escena
-            SceneManager.SetActiveScene(presente);
-        }
-        else if(SceneManager.GetActiveScene().name == "Presente_Test")
-        {
-            // Pillamos la escena activa
-            Scene presente = SceneManager.GetActiveScene();
-            desactivarObjetos(presente);
-
-            // Pillamos la otra escena
-            Scene pasado = SceneManager.GetSceneByName("Pasado_Test");
-            activarObjetos(pasado);
-
-            // Activamos la camara y el jugador
-            jugador.SetActive(true);
-            camara.SetActive(true);
-
-            // Los movemos de escena
-            SceneManager.MoveGameObjectToScene(jugador, pasado);
-            SceneManager.MoveGameObjectToScene(camara, pasado);
-
-            // Cambiamos de escena
-            SceneManager.SetActiveScene(pasado);
+            SceneManager.SetActiveScene(pasadoScene);
+            presenteActivo = !presenteActivo;
         }
     }
 

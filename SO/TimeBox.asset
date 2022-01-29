@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00abed29483602439acfebc210e2106, type: 3}
   m_Name: TimeBox
   m_EditorClassIdentifier: 
-  nombre: 
+  nombre: Caja
   estados:
   - {fileID: 21300000, guid: afd4833c2bc4ae545a81f87f56b98ddf, type: 3}
   - {fileID: 21300000, guid: afd4833c2bc4ae545a81f87f56b98ddf, type: 3}

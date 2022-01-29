@@ -6,4 +6,6 @@ public class InputManager : ScriptableObject {
     public string vertical;
     public string interact;
     public string pause;
+    public string timeTravel;
+    public string usarInventario;
 }
