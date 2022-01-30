@@ -83,10 +83,26 @@ MonoBehaviour:
   portalSalida: {fileID: 0}
   usos: 0
   audioSource: {fileID: 7907149546242853058}
---- !u!1 &5568687105192218189
-GameObject:
 --- !u!114 &-5744027163833076149
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463995884512883945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: Audio Source
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: 
+    listaDeOraciones: []
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
+--- !u!1 &5568687105192218189
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,7 +112,7 @@ MonoBehaviour:
   - component: {fileID: 4225614692222349996}
   - component: {fileID: 7907149546242853058}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: audio source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,19 +228,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_GameObject: {fileID: 463995884512883945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogos:
-    nombre: Caja vieja
-    listaDeOraciones:
-    - Hay una tarjeta dentro pero no llego a alcanzarla
-  bocadillo: {fileID: 0}
-  displayText: {fileID: 0}
-  velocidadDeTexto: 0
 --- !u!1 &9180350467922662392
 GameObject:
   m_ObjectHideFlags: 0
