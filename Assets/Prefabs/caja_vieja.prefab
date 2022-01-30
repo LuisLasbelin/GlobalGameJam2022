@@ -97,7 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogos:
     nombre: 
-    listaDeOraciones: []
+    listaDeOraciones:
+    - Hay una tarjeta dentro pero no llego a alcanzarla
   bocadillo: {fileID: 0}
   displayText: {fileID: 0}
   velocidadDeTexto: 0
