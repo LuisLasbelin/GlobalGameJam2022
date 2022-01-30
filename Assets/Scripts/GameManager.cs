@@ -163,7 +163,6 @@ public class GameManager : MonoBehaviour
             if(objetivo.numero_de_usos > _objetoInteraccion.usos)
             {
                 Debug.Log("Hola buenos dias");
-                _objetoInteraccion.usos = _objetoInteraccion.usos + 1;
                 activarUso(_objetoInteraccion, objetivo);
             }
         }
@@ -176,6 +175,7 @@ public class GameManager : MonoBehaviour
     {
         if (objetivo.activable)
         {
+            // Si tienes un objeto en el inventario
             if (inventario != null)
             {
 
@@ -187,13 +187,16 @@ public class GameManager : MonoBehaviour
                     {
                         case ObjetoSO.tipoUsoEnum.cambioEstado:
                             _invSo.estadoActual = 1;
+                            SumarUso(_objetoInteraccion);
                             break;
                         case ObjetoSO.tipoUsoEnum.consumible:
                             Debug.Log("Hey escucha");
                             // Elimina la referencia del objeto llevado
                             LimpiarInventario();
+                            SumarUso(_objetoInteraccion);
                             break;
                         case ObjetoSO.tipoUsoEnum.estatico:
+                            SumarUso(_objetoInteraccion);
                             break;
                         default:
                             break;
@@ -220,12 +223,14 @@ public class GameManager : MonoBehaviour
 
                 Debug.Log("Activado");
             }
-            else if("Ninguno".Equals(objetivo.objetoNecesario.ToString())){
+            // Si no tienes objeto en el inventario
+            else if(objetivo.objetoNecesario == ObjetoSO.objetoEnum.Ninguno){
                 
                 // Resultado del objetivo
                 if (objetivo.contenidoSpawn != null)
                 {
                     Instantiate(objetivo.contenidoSpawn, personaje.transform.position, Quaternion.identity);
+                    SumarUso(_objetoInteraccion);
                 }
             }
         }
@@ -235,5 +240,10 @@ public class GameManager : MonoBehaviour
         // Elimina la referencia del objeto llevado
         inventario = null;
         inventarioUi.sprite = spriteVacio;
+    }
+
+    private void SumarUso(ObjetoInteraccion _objetoInteraccion) {
+        _objetoInteraccion.usos = _objetoInteraccion.usos + 1;
+        _objetoInteraccion.Animacion();
     }
 }

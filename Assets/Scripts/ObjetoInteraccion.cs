@@ -68,6 +68,13 @@ public class ObjetoInteraccion : MonoBehaviour {
     public void ActivarObjeto() {
         manager.usarObjeto(this, so);
         Debug.Log("Objeto activado: " + gameObject.name);
+    }
+
+    public void DialogoObjeto() {
+
+    }
+
+    public void Animacion() {
         // Animacion Activate
         Animator _anim = spriteObj.GetComponent<Animator>();
         if(_anim != null) {
@@ -76,9 +83,5 @@ public class ObjetoInteraccion : MonoBehaviour {
             estado = 2;
             _anim.SetInteger("Estado", estado);
         }
-    }
-
-    public void DialogoObjeto() {
-
     }
 }

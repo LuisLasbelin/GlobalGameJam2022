@@ -421,30 +421,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2116001527757732211, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
   m_PrefabInstance: {fileID: 2116001527514172014}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &854168351 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2116001527742273905, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-  m_PrefabInstance: {fileID: 2116001527514172014}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &854168355
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 854168351}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 59ddc63d964e9e247a76566b8040346a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1112109199
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +508,10 @@ PrefabInstance:
       propertyPath: portalSalida
       value: 
       objectReference: {fileID: 1966467674}
+    - target: {fileID: 4743331961341463735, guid: bd3c9c84bf7564549b811ccac3f3829e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9103489546031379652, guid: bd3c9c84bf7564549b811ccac3f3829e, type: 3}
       propertyPath: m_Name
       value: Portal
@@ -947,6 +927,10 @@ PrefabInstance:
       propertyPath: portalSalida
       value: 
       objectReference: {fileID: 1113811216}
+    - target: {fileID: 4743331961341463735, guid: bd3c9c84bf7564549b811ccac3f3829e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 9103489546031379652, guid: bd3c9c84bf7564549b811ccac3f3829e, type: 3}
       propertyPath: m_Name
       value: Portal (1)
@@ -1009,34 +993,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2116001527742273870, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116001527742273871, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_Size.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116001527742273871, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116001527742273871, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116001527757732208, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_Radius
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116001527757732210, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: e3f78c269e9d6624895d003e995e218f, type: 2}
-    - target: {fileID: 2116001527757732210, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2116001527757732211, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1086,20 +1042,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2116001527757732213, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2116001527757732213, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 854168355}
-    - target: {fileID: 2116001527757732213, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1406445114}
-    - target: {fileID: 2116001527757732213, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: maxParadoTimer
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
