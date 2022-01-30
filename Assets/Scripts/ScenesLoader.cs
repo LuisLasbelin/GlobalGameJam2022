@@ -14,6 +14,7 @@ public class ScenesLoader : MonoBehaviour
 
     public void VolverMenu() {
         SceneManager.LoadScene(Menu, LoadSceneMode.Single);
+        Debug.Log("Menu");
     }
 
     public void Endgame() {

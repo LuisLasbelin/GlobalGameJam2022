@@ -11,6 +11,7 @@ public class ObjetoInteraccion : MonoBehaviour {
     GameManager manager;
     public Transform portalSalida;
     public int usos;
+    public AudioSource audioSource;
 
     private void Awake() {
         sr = spriteObj.GetComponent<SpriteRenderer>();
@@ -50,6 +51,7 @@ public class ObjetoInteraccion : MonoBehaviour {
                 return true;
             case ObjetoSO.tipoObjetoEnum.portal:
                 manager.SaltoTemporal(portalSalida);
+                Sonido();
                 return false;
             default:
                 return false;
@@ -79,6 +81,14 @@ public class ObjetoInteraccion : MonoBehaviour {
         Animator _anim = spriteObj.GetComponent<Animator>();
         if(_anim != null) {
             _anim.SetTrigger("Activate");
+        }
+        Sonido();
+    }
+
+    public void Sonido() {
+        // Ejecutar sonido
+        if(audioSource != null) {
+            audioSource.Play();
         }
     }
 

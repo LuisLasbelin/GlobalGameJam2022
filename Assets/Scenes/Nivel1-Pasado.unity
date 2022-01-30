@@ -4682,17 +4682,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7372845826493761730, guid: 398d87ee25e444d4d9f88d58d76bf671, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7372845826493761731, guid: 398d87ee25e444d4d9f88d58d76bf671, type: 3}
       propertyPath: m_Name
       value: DisWatter1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7372845826493761731, guid: 398d87ee25e444d4d9f88d58d76bf671, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7372845826493761733, guid: 398d87ee25e444d4d9f88d58d76bf671, type: 3}
       propertyPath: m_RootOrder

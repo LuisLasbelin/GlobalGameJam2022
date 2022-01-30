@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     Transform portalSalida;
     public float maxParadoTimer;
     float paradoTimer;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,13 @@ public class PlayerController : MonoBehaviour
 
             animator.SetInteger("Horizontal", Mathf.RoundToInt(movimiento.x));
             animator.SetInteger("Vertical", Mathf.RoundToInt(movimiento.y));
+
+            if(Vector3.Magnitude(rb.velocity) == 0) {
+                audioSource.mute = true;
+            } else {
+                audioSource.mute = false;
+            }
+            
         } else {
             rb.velocity = Vector2.zero;
         }
