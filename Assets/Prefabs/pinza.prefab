@@ -104,7 +104,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4491838204392927359}
-  - component: {fileID: 4802700165559151750}
   - component: {fileID: 3788708692853003151}
   m_Layer: 0
   m_Name: pinza
@@ -129,32 +128,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4802700165559151750
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4491838204392927329}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.007233143, y: 0.12658444}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7413902, y: 1.5153627}
-  m_EdgeRadius: 0
 --- !u!114 &3788708692853003151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +146,8 @@ MonoBehaviour:
   cerca: 0
   estado: 0
   exclamacion: {fileID: 5665069023684635122}
+  portalSalida: {fileID: 0}
+  usos: 0
 --- !u!1001 &620094616866751917
 PrefabInstance:
   m_ObjectHideFlags: 0

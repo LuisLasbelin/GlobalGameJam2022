@@ -79,8 +79,19 @@ public class ObjetoInteraccion : MonoBehaviour {
         Animator _anim = spriteObj.GetComponent<Animator>();
         if(_anim != null) {
             _anim.SetTrigger("Activate");
-            
-            estado = 2;
+        }
+    }
+
+    public void AumentarEstado() {
+        if(estado < 4) {
+            estado++;
+            ActualizarAnimator();
+        }
+    }
+
+    private void ActualizarAnimator() {
+        Animator _anim = spriteObj.GetComponent<Animator>();
+        if(_anim != null) {
             _anim.SetInteger("Estado", estado);
         }
     }

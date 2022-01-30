@@ -6,7 +6,6 @@ public class ObjetoSO : ScriptableObject
 {
     public string nombre;
     public List<Sprite> estados;
-    public int estadoActual = 0;
     public tipoObjetoEnum tipoObjeto;
     public objetoEnum objeto;
     public tipoUsoEnum tipoUso;
@@ -36,7 +35,8 @@ public class ObjetoSO : ScriptableObject
         dispensador_agua,
         caja_vieja,
         caja_nueva,
-        Ninguno
+        Ninguno,
+        puerta
     }
 
     public bool activable;

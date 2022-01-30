@@ -15,12 +15,11 @@ MonoBehaviour:
   nombre: Lector
   estados:
   - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
-  - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
-  - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
-  - {fileID: 21300000, guid: 9c5e0732c7dfd4745b36d8293e894475, type: 3}
-  estadoActual: 0
+  - {fileID: 21300000, guid: dceceab5ebff3a443aff1d4a47750d6f, type: 3}
+  - {fileID: 21300000, guid: 8e3d76047aa0c5747838fa41918460cc, type: 3}
+  - {fileID: 21300000, guid: 8e3d76047aa0c5747838fa41918460cc, type: 3}
   tipoObjeto: 1
-  objeto: 0
+  objeto: 6
   tipoUso: 0
   activable: 1
   objetoNecesario: 5

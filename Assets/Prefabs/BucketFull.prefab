@@ -187,7 +187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4124303211471791942}
   - component: {fileID: 5145930191736318723}
-  - component: {fileID: 3655771729492104002}
   m_Layer: 0
   m_Name: BucketFull
   m_TagString: Untagged
@@ -232,32 +231,6 @@ MonoBehaviour:
   exclamacion: {fileID: 1387879422740747676}
   portalSalida: {fileID: 0}
   usos: 0
---- !u!61 &3655771729492104002
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8066801675041171106}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00528574, y: -0.33859503}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.47296333, y: 0.17796779}
-  m_EdgeRadius: 0
 --- !u!1001 &6145133639676623299
 PrefabInstance:
   m_ObjectHideFlags: 0

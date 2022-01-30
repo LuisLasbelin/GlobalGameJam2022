@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour
     public int presenteInd;
     Scene presenteScene;
     public bool presenteActivo = true;
-    GameManager gameManager;
     public Animator fundidoAnim;
+    public ObjetoInteraccion puerta;
+    public string creditsScene;
 
     void Start() {
         pasadoScene = SceneManager.GetSceneByBuildIndex(pasadoInd);
@@ -24,16 +25,15 @@ public class GameManager : MonoBehaviour
         presenteActivo = true;
         //desactivarObjetos(pasadoScene);
 
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     #region Salto temporal
     public void SaltoTemporal(Transform portalSalida)
     {
-        if (gameManager.inventario != null)
+        if (inventario != null)
         {
 
-            GameObject objeto = gameManager.inventario;
+            GameObject objeto = inventario;
 
             if (!presenteActivo)
             {
@@ -173,6 +173,7 @@ public class GameManager : MonoBehaviour
     }
     public void activarUso(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo)
     {
+        Debug.Log("Interaccion con " + _objetoInteraccion.gameObject.name);
         if (objetivo.activable)
         {
             // Si tienes un objeto en el inventario
@@ -186,7 +187,7 @@ public class GameManager : MonoBehaviour
                     switch (_invSo.tipoUso)
                     {
                         case ObjetoSO.tipoUsoEnum.cambioEstado:
-                            _invSo.estadoActual = 1;
+                            _objetoInteraccion.AumentarEstado();
                             SumarUso(_objetoInteraccion);
                             break;
                         case ObjetoSO.tipoUsoEnum.consumible:
@@ -194,6 +195,7 @@ public class GameManager : MonoBehaviour
                             // Elimina la referencia del objeto llevado
                             LimpiarInventario();
                             SumarUso(_objetoInteraccion);
+                            _objetoInteraccion.AumentarEstado();
                             break;
                         case ObjetoSO.tipoUsoEnum.estatico:
                             SumarUso(_objetoInteraccion);
@@ -209,12 +211,12 @@ public class GameManager : MonoBehaviour
 
                     Debug.Log(objetivo.objeto.ToString());
 
-                    if ("fuego".Equals(objetivo.objeto.ToString()))
+                    if (objetivo.objeto == ObjetoSO.objetoEnum.fuego)
                     {
 
                         _objetoInteraccion.transform.parent.transform.position = new Vector2(2000, 2000);
                     }
-                    Debug.Log("Activado aaa");
+                    Debug.Log("Objeto activado");
                 }
                 else
                 {
@@ -234,6 +236,17 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+
+        // Lector
+        if(objetivo.objeto == ObjetoSO.objetoEnum.lector) {
+            if(_objetoInteraccion.estado >= 2){
+                AbrirPuerta();
+            }
+        }
+        // Puerta
+        if(objetivo.objeto == ObjetoSO.objetoEnum.puerta) {
+            Endgame();
+        }
     }
 
     public void LimpiarInventario() {
@@ -245,5 +258,15 @@ public class GameManager : MonoBehaviour
     private void SumarUso(ObjetoInteraccion _objetoInteraccion) {
         _objetoInteraccion.usos = _objetoInteraccion.usos + 1;
         _objetoInteraccion.Animacion();
+    }
+
+    public void AbrirPuerta() {
+        puerta.accesible = true;
+        puerta.Animacion();
+        Debug.Log("Puerta abierta!");
+    }
+
+    public void Endgame() {
+        SceneManager.LoadScene(creditsScene, LoadSceneMode.Single);
     }
 }
