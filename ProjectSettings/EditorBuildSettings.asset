@@ -17,10 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel1-Pasado.unity
     guid: 89ed3086b5c01084093b7e1dd60265c9
-  - enabled: 0
-    path: Assets/Scenes/Presente_Test.unity
-    guid: 225c30edde7a8104fb2d52b621e80015
-  - enabled: 0
-    path: Assets/Scenes/Pasado_Test.unity
-    guid: 58fa73efd5ba97842b22b587ef8637c1
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 0c898e5f51f385a49b2db26004263c3d
   m_configObjects: {}
