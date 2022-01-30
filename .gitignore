@@ -1,0 +1,11 @@
+Library/
+Logs/
+obj/
+Packages/
+Temp/
+UserSettings/
+.vsconfig
+.csproj
+*.sln
+Assembly-CSharp.csproj
+TimeBox.sln
