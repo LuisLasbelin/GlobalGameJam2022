@@ -41,8 +41,9 @@ public class PlayerController : MonoBehaviour
 
             rb.velocity = movimiento * speed;
 
-            animator.SetInteger("Horizontal", Mathf.RoundToInt(movimiento.x));
-            animator.SetInteger("Vertical", Mathf.RoundToInt(movimiento.y));
+            animator.SetFloat("Horizontal", movimiento.x);
+            animator.SetFloat("Vertical", movimiento.y);
+            animator.SetFloat("Speed", Vector3.Magnitude(rb.velocity));
 
             if(Vector3.Magnitude(rb.velocity) == 0) {
                 audioSource.mute = true;
