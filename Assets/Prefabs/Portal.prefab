@@ -301,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9103489546031379654}
   - component: {fileID: 3426472983583775432}
+  - component: {fileID: -4131885307314113595}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -346,3 +347,22 @@ MonoBehaviour:
   portalSalida: {fileID: 0}
   usos: 0
   audioSource: {fileID: 828323086530637548}
+--- !u!114 &-4131885307314113595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103489546031379652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: Portal
+    listaDeOraciones:
+    - 
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0

@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4491838204392927359}
   - component: {fileID: 3788708692853003151}
+  - component: {fileID: 7757529843936393902}
   m_Layer: 0
   m_Name: pinza
   m_TagString: Untagged
@@ -148,6 +149,25 @@ MonoBehaviour:
   exclamacion: {fileID: 5665069023684635122}
   portalSalida: {fileID: 0}
   usos: 0
+--- !u!114 &7757529843936393902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491838204392927329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: Pinzas
+    listaDeOraciones:
+    - Perfectas para agarrar cosas
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1001 &620094616866751917
 PrefabInstance:
   m_ObjectHideFlags: 0

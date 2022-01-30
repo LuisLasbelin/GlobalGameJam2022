@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 6895443446683914887}
   - component: {fileID: 589265924942200516}
   - component: {fileID: 675561073}
+  - component: {fileID: 680061080428685052}
   m_Layer: 0
   m_Name: puerta1
   m_TagString: Untagged
@@ -324,6 +325,25 @@ MonoBehaviour:
   portalSalida: {fileID: 0}
   usos: 0
   audioSource: {fileID: 8551896160451105168}
+--- !u!114 &680061080428685052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6895443446683914881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: 
+    listaDeOraciones:
+    - Finalmente llegue al final
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1001 &6895443445306681973
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,13 +19,14 @@ public class GameManager : MonoBehaviour
     public Animator fundidoAnim;
     public ObjetoInteraccion puerta;
     public string creditsScene;
+    public GameObject bocadillo;
+    public TextMeshProUGUI displayText;
 
     void Start() {
         pasadoScene = SceneManager.GetSceneByBuildIndex(pasadoInd);
         presenteScene = SceneManager.GetSceneByBuildIndex(presenteInd);
         presenteActivo = true;
         //desactivarObjetos(pasadoScene);
-
     }
 
     #region Salto temporal
@@ -156,22 +158,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void usarObjeto(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo)
+    public void activarDialogos(DialogManager dialogos)
+    {
+        GameManager gameManager = GetComponent<GameManager>();
+        dialogos.EmpezarDialogo(gameManager);
+    }
+
+    public void usarObjeto(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo, DialogManager dialogos)
     {
         if(objetivo.tiene_usos)
         {
             if(objetivo.numero_de_usos > _objetoInteraccion.usos)
             {
                 Debug.Log("Hola buenos dias");
-                activarUso(_objetoInteraccion, objetivo);
+                activarUso(_objetoInteraccion, objetivo, dialogos);
             }
         }
         else
         {
-            activarUso(_objetoInteraccion, objetivo);
+            activarUso(_objetoInteraccion, objetivo, dialogos);
         }
     }
-    public void activarUso(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo)
+    public void activarUso(ObjetoInteraccion _objetoInteraccion, ObjetoSO objetivo, DialogManager dialogos)
     {
         Debug.Log("Interaccion con " + _objetoInteraccion.gameObject.name);
         if (objetivo.activable)
@@ -220,6 +228,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    activarDialogos(dialogos);
                     Debug.Log("No tienes el objeto necesario");
                 }
 
@@ -234,6 +243,11 @@ public class GameManager : MonoBehaviour
                     Instantiate(objetivo.contenidoSpawn, personaje.transform.position, Quaternion.identity);
                     SumarUso(_objetoInteraccion);
                 }
+            }
+            else if(objetivo.objetoNecesario != ObjetoSO.objetoEnum.Ninguno)
+            {
+                activarDialogos(dialogos);
+                Debug.Log("No tienes el objeto necesario");
             }
         }
 

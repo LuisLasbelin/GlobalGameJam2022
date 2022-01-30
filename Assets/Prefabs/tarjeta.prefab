@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2750557409539994072}
   - component: {fileID: 3294250824528962018}
+  - component: {fileID: 4381407613934378168}
   m_Layer: 0
   m_Name: tarjeta
   m_TagString: Untagged
@@ -51,6 +52,27 @@ MonoBehaviour:
   cerca: 0
   estado: 0
   exclamacion: {fileID: 8005806138720668056}
+  portalSalida: {fileID: 0}
+  usos: 0
+--- !u!114 &4381407613934378168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762934545094347235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: 
+    listaDeOraciones:
+    - Es una tarjeta
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1 &3442692427286711487
 GameObject:
   m_ObjectHideFlags: 0

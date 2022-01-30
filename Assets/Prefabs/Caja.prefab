@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3632651527485794512}
   - component: {fileID: 3632651527485794527}
   - component: {fileID: 3632651527485794526}
+  - component: {fileID: 2610108955668270865}
   m_Layer: 0
   m_Name: Caja
   m_TagString: Untagged
@@ -90,6 +91,27 @@ MonoBehaviour:
   cerca: 0
   estado: 0
   exclamacion: {fileID: 8389255950296502326}
+  portalSalida: {fileID: 0}
+  usos: 0
+--- !u!114 &2610108955668270865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3632651527485794525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: 
+    listaDeOraciones:
+    - 
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1 &3632651527814915509
 GameObject:
   m_ObjectHideFlags: 0
