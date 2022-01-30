@@ -731,11 +731,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9103489546031379654, guid: bd3c9c84bf7564549b811ccac3f3829e, type: 3}
   m_PrefabInstance: {fileID: 1113811212}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1268143257 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2591221394616383321, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-  m_PrefabInstance: {fileID: 2116001527514172014}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1406445111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,6 +1246,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 743561947, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2116001527757732211, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1303,26 +1302,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1406445114}
-    - target: {fileID: 2116001527757732213, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 1268143257}
-    - target: {fileID: 2591221394616383321, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2591221394616383321, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: Mute
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2591221394616383321, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c43c6981e199c364f8dbd0e1a826296c, type: 3}
-    - target: {fileID: 2591221394616383321, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -178883252616162178, guid: ec1f15b7d3a1e7f4ea252d0ccd623d59, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba2ede9a6cae737478b45d6fd39f8088, type: 3}
 --- !u!1001 &6676957698903989654
@@ -1441,6 +1420,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 589265924942200516, guid: 45d8f7b576787c7458b3dab71366032f, type: 3}
+      propertyPath: m_Size.x
+      value: 5.343101
+      objectReference: {fileID: 0}
+    - target: {fileID: 589265924942200516, guid: 45d8f7b576787c7458b3dab71366032f, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.0162992
+      objectReference: {fileID: 0}
     - target: {fileID: 6895443446683914881, guid: 45d8f7b576787c7458b3dab71366032f, type: 3}
       propertyPath: m_Name
       value: puerta1

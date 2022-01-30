@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     Transform portalSalida;
     public float maxParadoTimer;
     float paradoTimer;
-    public AudioSource audioSource;
+    public AudioSource audioSource, recogerSource;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         #region Movimiento del jugador
         if(!parado) {
-            Vector3 movimiento = new Vector2(Input.GetAxis(input.horizontal), Input.GetAxis(input.vertical));
+            Vector3 movimiento = new Vector2(Input.GetAxisRaw(input.horizontal), Input.GetAxisRaw(input.vertical));
 
             rb.velocity = movimiento * speed;
 
@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
             }
             if(recogiendo) {
                 _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
+                recogerSource.Play();
                 recogiendo = false;
             }
         }
