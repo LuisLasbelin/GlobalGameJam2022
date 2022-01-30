@@ -11,6 +11,7 @@ public class ObjetoInteraccion : MonoBehaviour {
     GameManager manager;
     public Transform portalSalida;
     public int usos;
+    private DialogManager dialogos;
 
     private void Awake() {
         sr = spriteObj.GetComponent<SpriteRenderer>();
@@ -29,6 +30,7 @@ public class ObjetoInteraccion : MonoBehaviour {
         exclamacion.SetActive(false);
 
         manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        dialogos  = this.gameObject.GetComponent<DialogManager>();
     }
 
     public void PuedeInteraccionar(bool vf) {
@@ -37,9 +39,11 @@ public class ObjetoInteraccion : MonoBehaviour {
     }
 
     public bool Interaccion() {
+
         switch (so.tipoObjeto)
         {
             case ObjetoSO.tipoObjetoEnum.recoger:
+                dialogos.EmpezarDialogo(manager);
                 RecogerObjeto();
                 return true;
             case ObjetoSO.tipoObjetoEnum.uso:
@@ -66,12 +70,12 @@ public class ObjetoInteraccion : MonoBehaviour {
     }
 
     public void ActivarObjeto() {
-        manager.usarObjeto(this, so);
+        manager.usarObjeto(this, so, dialogos);
         Debug.Log("Objeto activado: " + gameObject.name);
     }
 
     public void DialogoObjeto() {
-
+        dialogos.EmpezarDialogo(manager);
     }
 
     public void Animacion() {

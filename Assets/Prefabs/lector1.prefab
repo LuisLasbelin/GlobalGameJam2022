@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5598927993962081244}
   - component: {fileID: 1979886564562871626}
+  - component: {fileID: 4898634695772471740}
   m_Layer: 0
   m_Name: lector1
   m_TagString: Untagged
@@ -148,6 +149,25 @@ MonoBehaviour:
   exclamacion: {fileID: 7819463649579964342}
   portalSalida: {fileID: 0}
   usos: 0
+--- !u!114 &4898634695772471740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5598927993962081246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: Lector
+    listaDeOraciones:
+    - Si quiero salir de aqui necesito encontrar las dos tarjetas
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1001 &3062740514852322281
 PrefabInstance:
   m_ObjectHideFlags: 0

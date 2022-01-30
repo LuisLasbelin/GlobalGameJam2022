@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 6013469700414002004}
   - component: {fileID: 8701201490977243088}
   - component: {fileID: 7377347755394554778}
+  - component: {fileID: -6682274283610246264}
   m_Layer: 0
   m_Name: caja_nueva
   m_TagString: Untagged
@@ -173,6 +174,27 @@ MonoBehaviour:
   cerca: 0
   estado: 0
   exclamacion: {fileID: 1057075983732160703}
+  portalSalida: {fileID: 0}
+  usos: 0
+--- !u!114 &-6682274283610246264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6013469700414002006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: Caja
+    listaDeOraciones:
+    - La caja es un poco endeble tal vez se pueda forzar con algo
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1001 &5237166874420090080
 PrefabInstance:
   m_ObjectHideFlags: 0

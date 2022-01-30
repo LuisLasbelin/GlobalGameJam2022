@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7372845826493761733}
   - component: {fileID: 8176875061730808498}
   - component: {fileID: 5200743303218039051}
+  - component: {fileID: -5125261193349883034}
   m_Layer: 0
   m_Name: DisWatter1
   m_TagString: Untagged
@@ -78,6 +79,27 @@ MonoBehaviour:
   cerca: 0
   estado: 0
   exclamacion: {fileID: 6699361511153165286}
+  portalSalida: {fileID: 0}
+  usos: 0
+--- !u!114 &-5125261193349883034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372845826493761731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: 
+    listaDeOraciones:
+    - Hay suficiente agua como para llenar un cubo, mantenganse hidratados.
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1 &7511350936524385897
 GameObject:
   m_ObjectHideFlags: 0

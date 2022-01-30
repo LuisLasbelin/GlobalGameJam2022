@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8887978308559459123}
   - component: {fileID: 4621613345346866645}
+  - component: {fileID: 594056502674200019}
   m_Layer: 0
   m_Name: palanca
   m_TagString: Untagged
@@ -51,6 +52,27 @@ MonoBehaviour:
   cerca: 0
   estado: 0
   exclamacion: {fileID: 3279813443368323908}
+  portalSalida: {fileID: 0}
+  usos: 0
+--- !u!114 &594056502674200019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4565876555182281202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: Palanca
+    listaDeOraciones:
+    - Es una palanca, esto me recuerda a un juego....
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1 &6814207495924037777
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 463995884512883959}
   - component: {fileID: 2642965238211581027}
   - component: {fileID: 4448476371538950359}
+  - component: {fileID: -5744027163833076149}
   m_Layer: 0
   m_Name: caja_vieja
   m_TagString: Untagged
@@ -78,6 +79,27 @@ MonoBehaviour:
   cerca: 0
   estado: 0
   exclamacion: {fileID: 104060773248446721}
+  portalSalida: {fileID: 0}
+  usos: 0
+--- !u!114 &-5744027163833076149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463995884512883945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d37bd32f10479e4ab5c99d45dc881f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogos:
+    nombre: Caja vieja
+    listaDeOraciones:
+    - Hay una tarjeta dentro pero no llego a alcanzarla
+  bocadillo: {fileID: 0}
+  displayText: {fileID: 0}
+  velocidadDeTexto: 0
 --- !u!1 &9180350467922662392
 GameObject:
   m_ObjectHideFlags: 0
