@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94429078}
   - component: {fileID: 94429077}
+  - component: {fileID: 94429079}
   m_Layer: 0
   m_Name: pantalla_laboratorio
   m_TagString: Untagged
@@ -288,6 +289,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &94429079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94429076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f995349c906e67a4cac83834e6c8045b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &136390592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1841,6 +1854,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1084165213}
   - component: {fileID: 1084165212}
+  - component: {fileID: 1084165214}
   m_Layer: 0
   m_Name: Glass2
   m_TagString: Untagged
@@ -1913,6 +1927,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1084165214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084165211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f995349c906e67a4cac83834e6c8045b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1096405018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2398186951479225367, guid: af24acd98528bad488f6aee8354a51ac, type: 3}
@@ -3856,6 +3882,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1760519314}
   - component: {fileID: 1760519313}
+  - component: {fileID: 1760519315}
   m_Layer: 0
   m_Name: Glass1
   m_TagString: Untagged
@@ -3928,6 +3955,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1760519315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760519312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f995349c906e67a4cac83834e6c8045b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1768710280
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,7 +4654,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7126998882400448663, guid: b4b4458703de7484784eacf014914c42, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7126998882400448663, guid: b4b4458703de7484784eacf014914c42, type: 3}
       propertyPath: m_LocalPosition.x

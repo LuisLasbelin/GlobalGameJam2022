@@ -21,7 +21,7 @@ MonoBehaviour:
   tipoObjeto: 1
   objeto: 12
   tipoUso: 2
-  activable: 0
+  activable: 1
   objetoNecesario: 11
   dialogo: Hay un lector de tarjetas
   contenidoSpawn: {fileID: 0}

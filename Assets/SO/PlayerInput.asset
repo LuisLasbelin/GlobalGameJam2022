@@ -18,3 +18,4 @@ MonoBehaviour:
   pause: Cancel
   timeTravel: Jump
   usarInventario: Fire2
+  exit: Cancel

@@ -8,4 +8,5 @@ public class InputManager : ScriptableObject {
     public string pause;
     public string timeTravel;
     public string usarInventario;
+    public string exit;
 }

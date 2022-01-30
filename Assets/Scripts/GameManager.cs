@@ -259,7 +259,9 @@ public class GameManager : MonoBehaviour
         }
         // Puerta
         if(objetivo.objeto == ObjetoSO.objetoEnum.puerta) {
-            Endgame();
+            if(_objetoInteraccion.accesible) {
+                Endgame();
+            }
         }
     }
 

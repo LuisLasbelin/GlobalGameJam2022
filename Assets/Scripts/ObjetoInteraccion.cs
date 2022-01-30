@@ -39,6 +39,22 @@ public class ObjetoInteraccion : MonoBehaviour {
         exclamacion.SetActive(vf);
     }
 
+    public bool ComprobarAnimacion() {
+        switch (so.tipoObjeto)
+        {
+            case ObjetoSO.tipoObjetoEnum.recoger:
+                return true;
+            case ObjetoSO.tipoObjetoEnum.uso:
+                return true;
+            case ObjetoSO.tipoObjetoEnum.dialogo:
+                return true;
+            case ObjetoSO.tipoObjetoEnum.portal:
+                return false;
+            default:
+                return false;
+        }
+    }
+
     public bool Interaccion() {
 
         switch (so.tipoObjeto)

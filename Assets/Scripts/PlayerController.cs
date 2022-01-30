@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     public bool parado = false;
     bool viajando = false;
+    bool recogiendo = false;
     Transform portalSalida;
     public float maxParadoTimer;
     float paradoTimer;
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         animator = gameObject.GetComponentInChildren<Animator>();
         parado = false;
+        recogiendo = false;
+        viajando = false;
         paradoTimer = maxParadoTimer;
     }
 
@@ -60,6 +63,8 @@ public class PlayerController : MonoBehaviour
         if(Input.GetButtonDown(input.usarInventario)) manager.soltarObjeto();
         #endregion
 
+        if(Input.GetButtonDown(input.exit)) Application.Quit();
+
         Comprobarbjetos();
 
         #region Timer parado
@@ -74,7 +79,10 @@ public class PlayerController : MonoBehaviour
                 // Transporta la camara y el jugador a la otra sala
                 transform.position = portalSalida.position;
                 mainCamera.transform.position = new Vector3(portalSalida.position.x, portalSalida.position.y, mainCamera.transform.position.z);
-
+            }
+            if(recogiendo) {
+                _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
+                recogiendo = false;
             }
         }
         #endregion
@@ -143,11 +151,14 @@ public class PlayerController : MonoBehaviour
         }
         //Debug.Log("Interacciona con: " + _masCercano.name);
         // interaccion del objeto
-        bool _animacion = _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
+        bool _animacion = _masCercano.GetComponent<ObjetoInteraccion>().ComprobarAnimacion();
         // Animacion
         if(_animacion) {
+            recogiendo = true;
             animator.SetTrigger("Pickup");
             parado = true;
+        } else {
+            _masCercano.GetComponent<ObjetoInteraccion>().Interaccion();
         }
         return true; // interaccion correcta
     }

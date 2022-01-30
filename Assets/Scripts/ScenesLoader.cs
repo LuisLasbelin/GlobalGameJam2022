@@ -20,4 +20,8 @@ public class ScenesLoader : MonoBehaviour
     public void Endgame() {
         SceneManager.LoadScene(Credits, LoadSceneMode.Single);
     }
+
+    public void Exit() {
+        Application.Quit();
+    }
 }
