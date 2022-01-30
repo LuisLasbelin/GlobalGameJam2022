@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: A Pedra Productions
   productName: TimeLab
-  defaultCursor: {fileID: 2800000, guid: 1ac3bf1664df53c4daf9d75514051518, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 032d9dffcb006764487e2cd2f2db9136, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
