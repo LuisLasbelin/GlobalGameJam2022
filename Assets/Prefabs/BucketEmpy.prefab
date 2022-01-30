@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1062713986722568748}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.157, z: 0}
-  m_LocalScale: {x: 0.75343597, y: 0.36996686, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3708013602888420966}
   m_RootOrder: 2
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -847161459
   m_SortingLayer: 1
   m_SortingOrder: 5
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f47899454224c284181c861a60c42f6a, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.4627451}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   exclamacion: {fileID: 534736955287152258}
   portalSalida: {fileID: 0}
   usos: 0
+  audioSource: {fileID: 0}
 --- !u!114 &8895922296327682230
 MonoBehaviour:
   m_ObjectHideFlags: 0
